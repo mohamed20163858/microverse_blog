@@ -55,9 +55,15 @@
 
 ### Key Features <a name="key-features"></a>
 
-> comming soon
+> Added unit tests for controllers and models using Rspec-rails library 
  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Future Features <a name="future-features"></a>
+
+> Add group model to enable creating groups and make it look like a social website 
+> Add more fancy styling  
+ 
 
 <!-- GETTING STARTED -->
 
