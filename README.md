@@ -95,7 +95,11 @@ end
 ``` 
 after that you need to run this command `bundle install` using terminal but you need to make sure you are under into the project destination to make it work. 
 
-To run All tests just run this command in your terminal after navigating to your project folder `bundle exec rspec` and if you just need to be more specific to test portion of files just write `bundle exec rspec ./spec/{folder_name}` to test certain files in a specific folder or `bundle exec rspec ./spec/{folder_name}/{file_name}` to test the a specific file in a specific folder 
+To run All tests just run this command in your terminal after navigating to your project folder `bundle exec rspec` and if you just need to be more specific to test portion of files just write `bundle exec rspec ./spec/{folder_name}` to test certain files in a specific folder or `bundle exec rspec ./spec/{folder_name}/{file_name}` to test the a specific file in a specific folder.
+
+After you run your tests you should see something like that 
+![image](https://user-images.githubusercontent.com/22921170/222914801-a0dae8fc-bb51-41d8-9f45-96d3dc272006.png)
+
 
 and here is a list of things that are being tested :- 
 - users and posts controller tests that includes 
