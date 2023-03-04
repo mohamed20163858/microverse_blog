@@ -55,9 +55,15 @@
 
 ### Key Features <a name="key-features"></a>
 
-> comming soon
+> Added unit tests for controllers and models using Rspec-rails library 
  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Future Features <a name="future-features"></a>
+
+> Add group model to enable creating groups and make it look like a social website 
+> Add more fancy styling  
+ 
 
 <!-- GETTING STARTED -->
 
@@ -85,7 +91,31 @@ To run the project just open your terminal, then change the directory to the loc
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Tests 
-comming soon
+ in this project all tests are done using `Rspec` testing library this is done by including these libraries `rspec-rails` and `rails-controller-testing`  in the `Gemfile` under directory the root of this project 
+ by including them under the group of development and testing like that : -
+ ``` 
+ group :development, :test do
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+end
+``` 
+after that you need to run this command `bundle install` using terminal but you need to make sure you are under into the project destination to make it work. 
+
+To run All tests just run this command in your terminal after navigating to your project folder `bundle exec rspec` and if you just need to be more specific to test portion of files just write `bundle exec rspec ./spec/{folder_name}` to test certain files in a specific folder or `bundle exec rspec ./spec/{folder_name}/{file_name}` to test the a specific file in a specific folder.
+
+After you run your tests you should see something like that 
+![image](https://user-images.githubusercontent.com/22921170/222914801-a0dae8fc-bb51-41d8-9f45-96d3dc272006.png)
+
+
+and here is a list of things that are being tested :- 
+- users and posts controller tests that includes 
+  - If response status was correct.
+  - If correct template was rendered.
+  - response body includes correct placeholder text. 
+- user, post, like, comment model tests that includes
+  - some fields are not blank like name and title fields 
+  - some fields have limit number of chars like title fields 
+  - some database fields must be integers and initialized by zero like posts_counter, like_counters, and comments_counters
 
 
 
