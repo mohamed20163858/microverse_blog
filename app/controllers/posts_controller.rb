@@ -17,8 +17,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author = current_user
-    @post.save
-    redirect_to "/users/#{current_user.id}/posts/#{@post.id}"
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to "/users/#{current_user.id}/posts/#{@post.id}" }
+      else
+        format.html { render "/users/#{current_user.id}/posts/#{@post.id}" }
+      end
+    end
   end
 
   def post_params
