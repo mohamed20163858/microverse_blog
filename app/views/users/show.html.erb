@@ -14,13 +14,19 @@
     <div class="post" id="<%= post.id %>">
     <h2><%= post.title %></h2>
     <p><%= post.text %></p>
-    <p class="reactions">Comments: <%= post.comments_counter %>, Likes: y </p>
+    <p class="reactions">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </p>
     </div>
   <% end %>
-  <button onclick="seePostsFunction(<%= @user.id %>)">See all posts</button>
+  <button onclick="seePostsFunction(<%= @user.id %>)">See all posts</button> 
+  <%if @user.id == @current_user.id %>
+    <button onclick="createPostFunction(<%=@user.id%>)">Create post</button>
+  <%end%>
 </div>
 <script>
   function seePostsFunction(id) {
      window.location.href = id+"/posts";
+  }
+  function createPostFunction(id) {
+    window.location.href = "/posts/new"
   }
 </script>
