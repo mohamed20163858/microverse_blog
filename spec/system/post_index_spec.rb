@@ -20,25 +20,25 @@ RSpec.describe 'User post index page Capybara integration test', type: :system d
     Comment.create(post: second_post, author: first_user, text: 'Thanks Lilly!')
     Like.create(post: first_post, author: first_user)
   end
-  # it "test seeing the user's profile picture" do
-  #   first_user = User.first
-  #   visit "/users/#{first_user.id}/posts"
-  #   sleep(1)
-  #   expect(page).to have_css("img[src*='https://i.ibb.co/CP4m1b4/img.jpg']")
-  # end
-  # it 'test seeing the user username' do
-  #   first_user = User.first
-  #   visit "/users/#{first_user.id}/posts"
-  #   sleep(1)
-  #   expect(page).to have_content("User name: #{first_user.name}")
-  # end
-  # it 'test seeing the user number of posts' do
-  #   first_user = User.first
-  #   number_of_posts = first_user.posts_counter
-  #   visit "/users/#{first_user.id}/posts"
-  #   sleep(1)
-  #   expect(page).to have_content("Number of posts: #{number_of_posts}")
-  # end
+  it "test seeing the user's profile picture" do
+    first_user = User.first
+    visit "/users/#{first_user.id}/posts"
+    sleep(1)
+    expect(page).to have_css("img[src*='https://i.ibb.co/CP4m1b4/img.jpg']")
+  end
+  it 'test seeing the user username' do
+    first_user = User.first
+    visit "/users/#{first_user.id}/posts"
+    sleep(1)
+    expect(page).to have_content("User name: #{first_user.name}")
+  end
+  it 'test seeing the user number of posts' do
+    first_user = User.first
+    number_of_posts = first_user.posts_counter
+    visit "/users/#{first_user.id}/posts"
+    sleep(1)
+    expect(page).to have_content("Number of posts: #{number_of_posts}")
+  end
   it 'test seeing the user post title ' do
     first_user = User.first
     post_title = first_user.posts.first.title
