@@ -43,7 +43,7 @@ RSpec.describe 'User post index page Capybara integration test', type: :system d
     first_user = User.first
     post_title = first_user.posts.first.title
     visit "/users/#{first_user.id}/posts"
-    click_button('Pagination', {id: first_user.posts.first.id})
+    click_button('Pagination', { id: first_user.posts.first.id })
     sleep(1)
     expect(page).to have_content(post_title.to_s)
   end
@@ -51,7 +51,7 @@ RSpec.describe 'User post index page Capybara integration test', type: :system d
     first_user = User.first
     post_body = first_user.posts.first.text
     visit "/users/#{first_user.id}/posts"
-    click_button('Pagination', {id: first_user.posts.first.id})
+    click_button('Pagination', { id: first_user.posts.first.id })
     sleep(1)
     expect(page).to have_content(post_body.to_s)
   end
@@ -59,7 +59,7 @@ RSpec.describe 'User post index page Capybara integration test', type: :system d
     first_user = User.first
     post_first_comment = first_user.posts.first.comments.first.text
     visit "/users/#{first_user.id}/posts"
-    click_button('Pagination', {id: first_user.posts.first.id})
+    click_button('Pagination', { id: first_user.posts.first.id })
     sleep(1)
     expect(page).to have_content(post_first_comment.to_s)
   end
@@ -74,7 +74,7 @@ RSpec.describe 'User post index page Capybara integration test', type: :system d
     first_user = User.first
     number_of_likes = first_user.posts.first.likes_counter
     visit "/users/#{first_user.id}/posts"
-    click_button('Pagination', {id: first_user.posts.first.id})
+    click_button('Pagination', { id: first_user.posts.first.id })
     sleep(1)
     expect(page).to have_content("Likes: #{number_of_likes}")
   end
@@ -82,7 +82,7 @@ RSpec.describe 'User post index page Capybara integration test', type: :system d
     first_user = User.first
     post_3_title = first_user.posts.first(3)[2].title
     visit "/users/#{first_user.id}/posts"
-    click_button('Pagination', {id: first_user.posts.first.id})
+    click_button('Pagination', { id: first_user.posts.first.id })
     sleep(1)
     expect(page).to have_content(post_3_title.to_s)
   end
