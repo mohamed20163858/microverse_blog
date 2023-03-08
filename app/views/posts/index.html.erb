@@ -18,7 +18,7 @@
         <p><%= User.find_by(id:comment.author_id).name%>: <%= comment.text %></p>
       <% end %>
     </div>
-    <button onclick="seePostFunction(<%=@user.id%>, <%=post.id%>)">Pagination</button>
+    <button onclick="seePostFunction(<%=@user.id%>, <%=post.id%>)" id="<%=post.id%>">Pagination</button>
   <% end %>
 </div>
 <script>
