@@ -16,5 +16,6 @@ class User < ApplicationRecord
 
   def init
     self.posts_counter = 0 if posts_counter.blank?
+    self.role = 'default' if role.blank?
   end
 end
