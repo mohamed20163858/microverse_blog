@@ -7,10 +7,10 @@
       <% @post.comments.each do |comment| %>
         <div>
           <p><%= User.find_by(id:comment.author_id).name%>: <%= comment.text %></p>
-         <!-- <%= link_to "Delete comment", post_path(@post), data: {
+          <%= link_to "Delete comment", comment_path(comment), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %> -->
+                  } %>
         </div>
       <% end %>
     </div>

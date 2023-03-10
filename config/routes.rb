@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/posts/new', to: 'posts#new' # use id=1 to enable only current user to create posts
   post '/posts', to: 'posts#create'
   post '/comments', to: 'comments#create'
+  delete '/comments/:comment_id', to: 'comments#destroy', as: 'comment'
   post '/likes', to: 'likes#create'
 
 end

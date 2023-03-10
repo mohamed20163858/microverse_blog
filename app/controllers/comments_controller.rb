@@ -15,11 +15,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @user = User.find(params[:user_id])
-    @comment = Comment.find_by(author_id: @user.id, post_id: @post.id)
+    @comment = Comment.find(params[:comment_id].to_i)
+    @post = Post.find_by(id: @comment.post_id)
+    @user = User.find_by(id: @comment.author_id)
     @comment.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to user_post_path(@user, @post), status: :see_other
   end
 
   def comment_params
