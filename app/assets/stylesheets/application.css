@@ -14,7 +14,7 @@
  *= require_self
  */
 
-* {
+.container {
   box-sizing: border-box;
   margin: 10px 20px;
 }
@@ -68,4 +68,54 @@
 
 .post .reactions {
   align-self: flex-end;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  padding: 0 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 10px;
+}
+
+.notice {
+  background-color: green;
+  color: white;
+}
+
+.alert {
+  background-color: red;
+  color: white;
+}
+
+input:not([type=checkbox]),
+textarea {
+  width: 100%;
+}
+
+textarea {
+  height: 20vh;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
 }
