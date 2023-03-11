@@ -5,10 +5,25 @@
     <p class="reactions">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> </p>
     <div class="comments">
       <% @post.comments.each do |comment| %>
-        <p><%= User.find_by(id:comment.author_id).name%>: <%= comment.text %></p>
+        <div>
+          <p><%= User.find_by(id:comment.author_id).name%>: <%= comment.text %></p>
+          <% if can? :destroy, comment %>
+
+            <%= link_to "Delete comment", comment_path(comment), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+          <% end %>
+        </div>
       <% end %>
     </div>
 </div>
+<% if can? :destroy, @post %>
+  <%= link_to "Delete post", post_path(@post), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+<% end %>
 <%= render 'forms/comment', comment: @comment %>
 <% like = Like.find_by(author_id: @user.id, post_id: @post.id) %>
 <% if like.nil? %>

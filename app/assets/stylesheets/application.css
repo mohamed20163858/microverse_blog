@@ -103,7 +103,10 @@ nav a {
   color: white;
 }
 
-input:not([type=checkbox]),
+input[type=email],
+input[type=text],
+input[type=password],
+.full-width,
 textarea {
   width: 100%;
 }
