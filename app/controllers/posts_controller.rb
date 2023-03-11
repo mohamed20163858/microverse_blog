@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id].to_i)
-    comments = @post.comments 
+    comments = @post.comments
     comments.destroy_all
     @post.destroy
 
