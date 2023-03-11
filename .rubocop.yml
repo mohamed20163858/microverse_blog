@@ -60,3 +60,5 @@ Style/HashTransformValues:
   Enabled: false
 Lint/UselessAssignment:
   Enabled: false
+Naming/ConstantName:
+  Enabled: false
